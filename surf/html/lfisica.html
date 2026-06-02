@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Para Todos - Loja Física</title>
+    <link rel="stylesheet" href="../css/lfisica.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="../img/logo.png" alt="Surf Para Todos"></a>
+        </div>
+        <nav>
+            <a href="aula.html">Aulas</a>
+            <a href="lfisica.html" class="active">Equipamento(Loja)</a>
+            <a href="equipamentod.html">Equipamentos</a>
+            <a href="clima.html">Clima</a>
+        </nav>
+        <div class="icons">
+            <a href="carrinho.html">🛒</a>
+            <a href="cadastro.html">👤</a>
+        </div>
+    </header>
+
+    <main class="store-container">
+        
+        <section class="section-box location-box">
+            <h2>Endereço da Loja</h2>
+            <p class="store-address">Rua Beira Mar, 150 - Itacaré - BA</p>
+            <div class="location-images">
+                <div class="image-wrapper">
+                    <p>Nosso Local</p>
+                    <img src="../img/local.jpg" alt="Imagem do Local" class="store-img">
+                </div>
+                <div class="image-wrapper">
+                    <p>Como Chegar (Mapa)</p>
+                    <img src="../img/mapa1.jpg" alt="Mapa do Local" class="store-img">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2>Itens</h2>
+            <div class="grid-container">
+                <div class="product-card">
+                    <img src="../img/lfquilha.png" alt="Quilha">
+                    <button class="btn-saiba-mais" onclick="openModal('Quilha Pro', 'R$ 150,00', 'Quilha de alta performance para maior estabilidade.')">Saiba mais</button>
+                </div>
+                <div class="product-card">
+                    <img src="../img/lfprancha.png" alt="Prancha">
+                    <button class="btn-saiba-mais" onclick="openModal('Prancha', 'R$ 800,00', 'Prancha de alta qualidade para iniciantes e profissionais.')">Saiba mais</button>
+                </div>
+                <div class="product-card">
+                    <img src="../img/lfleash.png" alt="Leash">
+                    <button class="btn-saiba-mais" onclick="openModal('Leash', 'R$ 90,00', 'Leash resistente com girador de alta performance.')">Saiba mais</button>
+                </div>
+                <div class="product-card">
+                    <img src="../img/lfdeckgrip.png" alt="Deck Grip">
+                    <button class="btn-saiba-mais" onclick="openModal('Deck Grip', 'R$ 120,00', 'Deck com máxima aderência para manobras.')">Saiba mais</button>
+                </div>
+                <div class="product-card">
+                    <img src="../img/lfroupa.png" alt="Roupa">
+                    <button class="btn-saiba-mais" onclick="openModal('Roupa', 'R$ 350,00', 'Neoprene térmico para conforto em águas frias.')">Saiba mais</button>
+                </div>
+                <div class="product-card">
+                    <img src="../img/lfcapa.png" alt="Capa">
+                    <button class="btn-saiba-mais" onclick="openModal('Capa', 'R$ 200,00', 'Capa térmica com zíper de alta durabilidade.')">Saiba mais</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2>Feedbacks</h2>
+            <div class="feedback-list">
+                <p>"Equipamento impecável!" - <em>Marina S.</em></p>
+                <p>"Atendimento excelente e entrega rápida." - <em>João P.</em></p>
+                <p>"Melhor loja da região, muito profissional!" - <em>Carlos M.</em></p>
+                <p>"Adorei a prancha que aluguei, super nova." - <em>Beatriz L.</em></p>
+                <p>"O sistema de delivery funciona muito bem." - <em>Ricardo F.</em></p>
+                <p>"Preços justos e instrutores muito atenciosos." - <em>Fernanda A.</em></p>
+                <p>"Recomendo a todos os iniciantes!" - <em>Lucas G.</em></p>
+                <p>"Tudo muito organizado e limpo." - <em>Patrícia V.</em></p>
+                <p>"A quilha que aluguei fez toda a diferença." - <em>Thiago S.</em></p>
+                <p>"Voltarei com certeza, nota 10!" - <em>Juliana R.</em></p>
+            </div>
+        </section>
+
+        <section class="booking-container">
+            <form id="reservation-form">
+                <div class="form-row flex-space">
+                    <div class="form-col">
+                        <div class="input-group">
+                            <label>Item:</label>
+                            <select class="select-item">
+                                <option value="">Selecionar item</option>
+                                <option value="quilha">Quilha</option>
+                                <option value="prancha">Prancha</option>
+                                <option value="leash">Leash</option>
+                                <option value="deck">Deck Grip</option>
+                                <option value="roupa">Roupa</option>
+                                <option value="capa">Capa</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>quantidade:</label>
+                            <div class="number-control">
+                                <button type="button" class="btn-minus">-</button>
+                                <input type="number" value="1" min="1" class="input-qty">
+                                <button type="button" class="btn-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-col">
+                        <div class="input-group">
+                            <label>período de aluguel(dias):</label>
+                            <div class="number-control">
+                                <button type="button" class="btn-minus">-</button>
+                                <input type="number" value="1" min="1" class="input-period">
+                                <button type="button" class="btn-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-col">
+                        <label>retirada na loja ou delivery</label>
+                        <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 5px; margin-top: 5px;">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="retirada" value="loja"> Loja física
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="retirada" value="delivery"> delivery
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions" style="display: flex; justify-content: center;">
+                    <button type="submit" class="submit-btn">Confirme sua reserva</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" style="cursor:pointer; float:right; font-size:24px;">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalPrice" style="font-weight:bold; margin: 10px 0;"></p>
+            <p id="modalDesc"></p>
+        </div>
+    </div>
+
+    <div id="confirmationPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 3000;">
+        <div style="background: #fffdec; margin: 15% auto; padding: 30px; width: 400px; border-radius: 20px; text-align: center; border: 2px solid #e2e4f6;">
+            <h2 style="margin-bottom: 15px;">Sua reserva já foi aprovada!</h2>
+            <p style="font-size: 18px;">Numero para retirada: <strong>1234567890</strong></p>
+            <button onclick="closeConfirmation()" style="margin-top: 20px; padding: 10px 20px; cursor: pointer; background:#d1d4f0; border:none; border-radius:5px;">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(t, p, d) {
+            document.getElementById('modalTitle').innerText = t;
+            document.getElementById('modalPrice').innerText = p;
+            document.getElementById('modalDesc').innerText = d;
+            document.getElementById('productModal').style.display = 'block';
+        }
+        function closeModal() { document.getElementById('productModal').style.display = 'none'; }
+
+        document.querySelectorAll('.number-control').forEach(control => {
+            const minusBtn = control.querySelector('.btn-minus');
+            const plusBtn = control.querySelector('.btn-plus');
+            const input = control.querySelector('input');
+            minusBtn.addEventListener('click', () => { if (parseInt(input.value) > parseInt(input.min)) input.value = parseInt(input.value) - 1; });
+            plusBtn.addEventListener('click', () => { input.value = parseInt(input.value) + 1; });
+        });
+
+        const checkboxes = document.querySelectorAll('input[name="retirada"]');
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', function() {
+                if(this.checked) checkboxes.forEach(other => { if(other !== this) other.checked = false; });
+            });
+        });
+
+        const form = document.getElementById('reservation-form');
+        const popup = document.getElementById('confirmationPopup');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            popup.style.display = 'block'; 
+        });
+
+        function closeConfirmation() {
+            popup.style.display = 'none'; 
+        }
+    </script>
+</body>
+</html>

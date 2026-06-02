@@ -1,0 +1,241 @@
+/* =======================================================
+   1. RESET & CONFIGURAÇÕES BASE
+   ======================================================= */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Arial', sans-serif; 
+}
+
+body { 
+    background-color: #bce1f9; 
+    min-height: 100vh; 
+}
+
+/* =======================================================
+   2. HEADER PADRONIZADO (EFEITO VIDRO)
+   ======================================================= */
+header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 14px 45px; 
+    background: rgba(132, 191, 220, 0.75); 
+    backdrop-filter: blur(10px); 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+}
+
+.logo img { 
+    width: 140px; 
+    border-radius: 50px; 
+}
+
+.nav-wrapper { 
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+}
+
+nav { 
+    display: flex; 
+    gap: 15px; 
+}
+
+nav a { 
+    text-decoration: none; 
+    color: #18475e; 
+    background: rgba(255, 255, 255, 0.35); 
+    padding: 10px 18px; 
+    border-radius: 14px; 
+    font-weight: 500; 
+}
+
+.icons { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    font-size: 18px; 
+    color: #18475e; 
+}
+
+/* =======================================================
+   3. CONTAINER PRINCIPAL (DASHBOARD)
+   ======================================================= */
+.dashboard-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 40px 20px; 
+}
+
+.profile-card { 
+    background: #add8f7; 
+    width: 100%; 
+    max-width: 1000px; 
+    padding: 40px; 
+    border-radius: 40px; 
+    display: flex; 
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* =======================================================
+   4. COLUNA ESQUERDA (DADOS PESSOAIS)
+   ======================================================= */
+.left-column { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.avatar { 
+    width: 120px; 
+    height: 120px; 
+    background: #8e4444; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 60px; 
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.pill { 
+    width: 100%; 
+    max-width: 280px; 
+    background: #c5e9ff; 
+    border: 2px solid #6eb6e2; 
+    border-radius: 25px; 
+    padding: 12px 20px; 
+    text-align: center; 
+    color: #18475e;
+    font-weight: bold; 
+    font-size: 15px;
+}
+
+.info-group, 
+.action-group { 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.btn-action { 
+    cursor: pointer; 
+    transition: 0.3s; 
+    border: 2px solid #4a90e2; 
+}
+
+.btn-action:hover { 
+    background: #4a90e2; 
+    color: white; 
+}
+
+/* =======================================================
+   5. COLUNA DIREITA (BOX DE METRICAS E COMPONENTES)
+   ======================================================= */
+.right-column { 
+    flex: 1.5; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.stats-top, 
+.stats-mid, 
+.stats-bottom { 
+    display: flex; 
+    gap: 20px; 
+}
+
+.stat-box { 
+    background: #c5e9ff; 
+    border: 2px solid #6eb6e2; 
+    border-radius: 20px; 
+    padding: 20px; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    color: #18475e;
+    flex: 1;
+}
+
+.stat-box.large { 
+    min-height: 150px; 
+}
+
+.stat-box.small { 
+    min-height: 120px; 
+}
+
+.stat-box h4 { 
+    font-size: 18px; 
+    margin-bottom: 10px; 
+}
+
+.stat-box p { 
+    font-size: 15px; 
+    line-height: 1.4; 
+}
+
+.stat-box .number { 
+    font-size: 40px; 
+    font-weight: bold; 
+    margin-top: 5px; 
+}
+
+/* BOX EM DESTAQUE (PRÓXIMA AULA) */
+.highlight-box {
+    background: #fffdec;
+    border-color: #e2e4f6;
+}
+
+.next-class-title {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #555;
+}
+
+.class-date {
+    font-size: 18px !important;
+    font-weight: bold;
+    color: #2b759f;
+    margin-top: 5px;
+}
+
+/* LISTA DE EQUIPAMENTOS ALUGADOS */
+.rented-list {
+    list-style: none;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+/* =======================================================
+   6. RESPONSIVIDADE
+   ======================================================= */
+@media (max-width: 850px) {
+    .profile-card { 
+        flex-direction: column; 
+    }
+    
+    .stats-top, 
+    .stats-mid, 
+    .stats-bottom { 
+        flex-direction: column; 
+        gap: 15px;
+    }
+}

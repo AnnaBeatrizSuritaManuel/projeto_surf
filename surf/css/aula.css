@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #b9d8e8, #d8edf7);
+    color: #234;
+    min-height: 100vh;
+}
+
+/* =======================================================
+   ESTILO PADRONIZADO DO MENU (BASEADO EM AULAS)
+   ======================================================= */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(132, 191, 220, 0.75); /* Fundo suave original de aulas */
+    backdrop-filter: blur(10px);          /* Efeito de vidro desfocado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 45px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #18475e;
+    background: rgba(255, 255, 255, 0.35);
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Hover e link Ativo com o azul de destaque */
+nav a:hover, nav a.active {
+    background: #4a90e2;
+    color: white;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    color: #18475e;
+}
+
+/* CONTAINER */
+main {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-colunas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* COLUNA DO PROJETO */
+.coluna {
+    width: 100%;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.coluna-titulo {
+    font-size: 18px;
+    font-weight: 600;
+    color: #18475e;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* =======================================================
+   O QUADRADO ROXO/AZUL DO FIGMA PARA O TEXTO
+   ======================================================= */
+.caixa-destaque-texto {
+    width: 100%;
+    max-width: 280px;
+    background-color: #4b5aa3;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 2px solid #3d4a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    margin-bottom: 15px;
+}
+
+.desc-aula-principal {
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* =======================================================
+   NOVO: MINI CARD DE INFORMAÇÕES COMPLEMENTARES
+   ======================================================= */
+.mini-card-info {
+    width: 100%;
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    text-align: left;
+}
+
+.mini-card-info h4 {
+    font-size: 15px;
+    color: #4b5aa3;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.mini-card-info .duracao {
+    font-size: 13px;
+    color: #2f4a57;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.mini-card-info hr {
+    border: none;
+    border-top: 1px solid rgba(75, 90, 163, 0.2);
+    margin-bottom: 8px;
+}
+
+.mini-card-info h5 {
+    font-size: 12px;
+    color: #18475e;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.lista-inclusos {
+    list-style: none;
+}
+
+.lista-inclusos li {
+    font-size: 13px;
+    color: #334455;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+/* BOTÃO SAIBA MAIS */
+.btn-saiba-mais {
+    background-color: #a3c2e8;
+    color: #112233;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 30px;
+    border: 1px solid #7ea8d8;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #b9d6f3;
+    transform: translateY(-1px);
+}
+
+/* MOLDURA DE FOTOS */
+.galeria-fotos {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 5px solid #99a9ff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: auto; /* Força a galeria a ficar sempre no rodapé do card */
+}
+
+.galeria-fotos img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* BOTÃO AGENDAR */
+.btn-agendar {
+    text-decoration: none;
+    text-align: center;
+    background-color: #4b5aa3;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.btn-agendar:hover {
+    background-color: #3d4a8a;
+    transform: scale(1.03);
+}
+
+/* =======================================================
+   ESTILOS INTERNOS DO POP-UP (MODAL)
+   ======================================================= */
+dialog.modal-planos {
+    margin: auto;
+    border: none;
+    border-radius: 24px;
+    padding: 0;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    background: #f4f9fc;
+}
+
+dialog.modal-planos::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    padding: 35px 25px;
+    position: relative;
+    text-align: center;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.2s;
+}
+
+.btn-close:hover {
+    color: #ff5b5b;
+}
+
+dialog.modal-planos h3 {
+    color: #18475e;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.lista-planos-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-plano-popup {
+    background-color: #4b5aa3;
+    border-radius: 18px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.texto-plano h4 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-transform: capitalize;
+}
+
+.preco-popup {
+    background-color: #a3c2e8;
+    color: #112233;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 2px 12px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.preco-popup.subtext-pop {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+}
+
+.btn-escolher-plano {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #4b5aa3;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+}
+
+.btn-escolher-plano:hover {
+    background-color: #f0f4f8;
+    color: #2c3766;
+    transform: translateX(2px);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+    .container-colunas {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .coluna {
+        width: 100%;
+        max-width: 340px;
+    }
+}

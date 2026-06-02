@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Surf Para Todos</title>
+    <link rel="stylesheet" href="../css/carrinho.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="../img/logo.png" alt="Surf Para Todos"></a>
+        </div>
+        <nav>
+            <a href="aula.html">Aulas</a>
+            <a href="lfisica.html">Equipamento(Loja)</a>
+            <a href="equipamentod.html">Equipamentos</a>
+            <a href="clima.html">Clima</a>
+        </nav>
+        <div class="icons">
+            <a href="carrinho.html">🛒</a>
+            <a href="cadastro.html">👤</a>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <section class="cart-items">
+            <div class="cart-card">
+                <img src="../img/ecamisa.png" width="80" alt="Produto">
+                <div class="cart-info">
+                    <h3>Camisa de surf preta, tamanho g</h3>
+                    <div class="qty-btn">
+                        <button onclick="alterarQtd('qtd1', -1)">-</button>
+                        <span id="qtd1">1</span>
+                        <button onclick="alterarQtd('qtd1', 1)">+</button>
+                    </div>
+                </div>
+                <p>R$ 120,00</p>
+            </div>
+
+            <div class="cart-card">
+                <img src="../img/eparafina.png" width="80" alt="Produto">
+                <div class="cart-info">
+                    <h3>Kit 4 parafinas profissionais</h3>
+                    <div class="qty-btn">
+                        <button onclick="alterarQtd('qtd2', -1)">-</button>
+                        <span id="qtd2">1</span>
+                        <button onclick="alterarQtd('qtd2', 1)">+</button>
+                    </div>
+                </div>
+                <p>R$ 25,00</p>
+            </div>
+        </section>
+
+        <aside class="cart-summary">
+            <h2>Resumo do pedido</h2>
+            
+            <div class="summary-details">
+                <p>Camisa de surf: <span>R$ 120,00</span></p>
+                <p>Kit 4 parafinas: <span>R$ 25,00</span></p>
+            </div>
+            
+            <hr class="summary-divider">
+
+            <div class="summary-options">
+                <div class="option-group">
+                    <label for="retirada">Forma de retirada:</label>
+                    <select id="retirada" class="select-summary">
+                        <option value="loja">Retirar na Loja Física</option>
+                        <option value="delivery">Delivery (Hotel/Pousada/Praia)</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label for="pagamento">Forma de pagamento:</label>
+                    <select id="pagamento" class="select-summary">
+                        <option value="pix">Pix</option>
+                        <option value="cartao">Cartão de Crédito / Débito</option>
+                        <option value="dinheiro">Dinheiro</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr class="summary-divider">
+            
+            <p class="summary-total"><strong>Total: R$ 145,00</strong></p>
+            <button class="btn-pay" onclick="showPopup()">Efetuar pagamento</button>
+        </aside>
+    </main>
+
+    <div id="paymentPopup" class="popup">
+        <div class="popup-content">
+            <h2>Seu pagamento já foi aprovado!</h2>
+            <p>Numero do pedido: #SRF-92847156-BR</p>
+            <button class="btn-pay" onclick="closePopup()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        function alterarQtd(id, delta) {
+            let span = document.getElementById(id);
+            let valor = parseInt(span.innerText);
+            if (valor + delta >= 1) {
+                span.innerText = valor + delta;
+            }
+        }
+        function showPopup() { document.getElementById('paymentPopup').style.display = 'flex'; }
+        function closePopup() { document.getElementById('paymentPopup').style.display = 'none'; }
+    </script>
+</body>
+</html>
